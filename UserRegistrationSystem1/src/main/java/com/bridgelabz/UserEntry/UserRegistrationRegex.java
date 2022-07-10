@@ -59,11 +59,11 @@ public class UserRegistrationRegex {
 		}
 	}
 	
-	//Uc4,5,6- Validate password using regex - minimum 8 characters,at least one capital letter & number.
+	//Uc4,5,6,7- Validate password using regex - minimum 8 characters,at least one capital letter,number,special character
 	public void validPassWord() {
 		System.out.println("\nEnter password : ");
 		String passWord = scanner.nextLine();
-		String regex = ("(?=.*[A-Z]){1,}(?=.*[0-9]){1,}[a-zA-Z0-9]{8,}");
+		String regex = ("(?=.*[A-Z]){1,}(?=.*[0-9]){1,}(?=.*[@#$%^&-+=()]){1}[a-zA-Z0-9@#$%^&-+=()]{8,}");
 					
 		Pattern pattern= Pattern.compile(regex);
 		Matcher matcher = pattern.matcher(passWord);
