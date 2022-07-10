@@ -59,11 +59,11 @@ public class UserRegistrationRegex {
 		}
 	}
 	
-	//Uc4 - Validate password using regex - minimum 8 characters
+	//Uc4,5 - Validate password using regex - minimum 8 characters,at least one capital letter
 	public void validPassWord() {
 		System.out.println("\nEnter password : ");
 		String passWord = scanner.nextLine();
-		String regex = ("[a-zA-Z0-9]{8,}");
+		String regex = ("(?=.*[A-Z]){1,}[a-zA-Z0-9]{8,}");
 					
 		Pattern pattern= Pattern.compile(regex);
 		Matcher matcher = pattern.matcher(passWord);
