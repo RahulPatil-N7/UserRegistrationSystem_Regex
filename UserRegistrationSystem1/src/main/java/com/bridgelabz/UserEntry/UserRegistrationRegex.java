@@ -24,5 +24,23 @@ public class UserRegistrationRegex {
 			validFirstName();
 		}
 	}
+	
+	//Uc2 - Validate last name using regex
+		public void validLastName() {
+			System.out.println("\nEnter last name : ");
+			String lastName = scanner.nextLine();
+			String regex = ("[A-Z]{1}[a-zA-Z]{2,}$");
+			
+			Pattern pattern= Pattern.compile(regex);
+			Matcher matcher = pattern.matcher(lastName);
+			if (matcher.matches()) {
+				System.out.println(lastName+" is valid.");
+			}
+			else {
+				System.out.println(lastName+" is invalid! Name should start with capital letter & have minimum 3 characters.");
+				validLastName();
+			}
+		}
+
 
 }
