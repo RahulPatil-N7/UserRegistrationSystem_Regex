@@ -75,6 +75,23 @@ public class UserRegistrationRegex {
 			validPassWord();
 		}
 	}
+	
+	//Uc8 - Validate mobile number using regex
+	public void validMobileNumber() {
+		System.out.println("\nEnter mobile number :");
+		String mobileNumber = scanner.nextLine();
+		String regex = ("[0-9]{2}[\\s][6789]{1}[0-9]{9}");
+					
+		Pattern pattern= Pattern.compile(regex);
+		Matcher matcher = pattern.matcher(mobileNumber);
+		if (matcher.matches()) {
+			System.out.println(mobileNumber+" is valid.");
+		}
+		else {
+			System.out.println(mobileNumber+" is invalid!");
+			validMobileNumber();
+		}
+	}
 
 }
 
