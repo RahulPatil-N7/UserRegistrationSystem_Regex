@@ -34,13 +34,29 @@ public class UserRegistrationRegex {
 		Pattern pattern= Pattern.compile(regex);
 		Matcher matcher = pattern.matcher(lastName);
 		if (matcher.matches()) {
-				System.out.println(lastName+" is valid.");
+			System.out.println(lastName+" is valid.");
 		}
 		else {
-				System.out.println(lastName+" is invalid! Name should start with capital letter & have minimum 3 characters.");
-				validLastName();
+			System.out.println(lastName+" is invalid! Name should start with capital letter & have minimum 3 characters.");
+			validLastName();
 		}
 	}
 
+	//Uc3 - Validate email using regex
+	public void validEMail() {
+		System.out.println("\nEnter Email Id : ");
+		String eMail = scanner.nextLine();
+		String regex = ("[a-zA-Z-0-9]{3,}@[a-zA-Z]{2,}\\.+[a-zA-Z]{2,}");
+				
+		Pattern pattern= Pattern.compile(regex);
+		Matcher matcher = pattern.matcher(eMail);
+		if (matcher.matches()) {
+			System.out.println(eMail+" is valid.");
+		}
+		else {
+			System.out.println(eMail+" is invalid!");
+			validEMail();
+		}
+	}
 
 }

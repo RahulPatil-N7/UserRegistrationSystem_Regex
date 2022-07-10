@@ -14,6 +14,7 @@ public class UserRegistrationMain {
 		
 		user.validFirstName();
 		user.validLastName();
+		user.validEMail();
 
 	}
 
