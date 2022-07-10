@@ -8,7 +8,7 @@ public class UserRegistrationRegex {
 	
 	Scanner scanner = new Scanner(System.in); 
 	
-	//Uc1 - Validate first name using regex
+	//Uc1 - Validate first name using regex 
 	public void validFirstName() {
 		System.out.println("\nEnter first name : ");
 		String firstName = scanner.nextLine();
