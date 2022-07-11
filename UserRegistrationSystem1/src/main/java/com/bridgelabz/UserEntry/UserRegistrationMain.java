@@ -16,7 +16,8 @@ public class UserRegistrationMain {
 		user.validLastName();
 		user.validEMail();
 		user.validMobileNumber();
-		user.validPassWord();
+		user.validPassWord(); 
+		user.validEMailSet();
 		
 
 	}
