@@ -103,29 +103,29 @@ public class UserRegistrationRegex {
 		
 		//Valid Email list
 		arrayList.add("abc@yahoo.com");
-        arrayList.add("abc-100@yahoo.com");
-        arrayList.add("abc.100@yahoo.com");
-        arrayList.add("abc111@abc.com");
-        arrayList.add("abc-100@abc.net");
-        arrayList.add("abc.100@abc.com.au");
-        arrayList.add("abc@1.com");
-        arrayList.add("abc@gmail.com.com");
-        arrayList.add("abc+100@gmail.com");
+        	arrayList.add("abc-100@yahoo.com");
+        	arrayList.add("abc.100@yahoo.com");
+        	arrayList.add("abc111@abc.com");
+        	arrayList.add("abc-100@abc.net");
+        	arrayList.add("abc.100@abc.com.au");
+        	arrayList.add("abc@1.com");
+        	arrayList.add("abc@gmail.com.com");
+        	arrayList.add("abc+100@gmail.com");
 
-        //Invalid Email list.
-        arrayList.add("abc");
-        arrayList.add("abc@.com.my");
-        arrayList.add("abc123@gmail.a");
-        arrayList.add("abc123@.com");
-        arrayList.add("abc123@.com.com");
-        arrayList.add(".abc@abc.com");
-        arrayList.add("abc()*@gmail.com");
-        arrayList.add("abc@%*.com");
-        arrayList.add("abc..2002@gmail.com");
-        arrayList.add("abc.@gmail.com");
-        arrayList.add("abc@abc@gmail.com");
-        arrayList.add("abc@gmail.com.1a");
-        arrayList.add("abc@gmail.com.aa.au");
+        	//Invalid Email list.
+        	arrayList.add("abc");
+        	arrayList.add("abc@.com.my");
+        	arrayList.add("abc123@gmail.a");
+        	arrayList.add("abc123@.com");
+        	arrayList.add("abc123@.com.com");
+        	arrayList.add(".abc@abc.com");
+        	arrayList.add("abc()*@gmail.com");
+        	arrayList.add("abc@%*.com");
+        	arrayList.add("abc..2002@gmail.com");
+        	arrayList.add("abc.@gmail.com");
+        	arrayList.add("abc@abc@gmail.com");
+       		arrayList.add("abc@gmail.com.1a");
+        	arrayList.add("abc@gmail.com.aa.au");
 		for (String array : arrayList) {
 			Matcher matcher = pattern.matcher(array);
 			
