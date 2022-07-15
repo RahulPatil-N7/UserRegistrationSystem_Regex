@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 public class UserRegistration {
 	
 	//Uc1 - validate first name using regex
-	public static String HappyFirstName(String firstName) {
+	public static String validFirstName(String firstName) {
 		String regex = ("[A-Z]{1}[a-zA-Z]{2,}$");
 		
 		Pattern pattern= Pattern.compile(regex);
@@ -20,7 +20,7 @@ public class UserRegistration {
 	}
 	
 	//Uc2 - validate last name using regex
-	public static String HappyLastName(String lastName) {
+	public static String validLastName(String lastName) {
 		String regex = ("[A-Z]{1}[a-zA-Z]{2,}$");
 			
 		Pattern pattern= Pattern.compile(regex);
@@ -34,7 +34,7 @@ public class UserRegistration {
 	}
 
 	//Uc3 - validate email using regex
-	public static String HappyEMail(String eMail) {
+	public static String validEMail(String eMail) {
 		String regex = ("^[a-zA-Z0-9]{2,20}([.][a-z0-9]+)?@[a-z]+.[a-z]{2,3}(.[a-z]{2})?$");		
 		
 		Pattern pattern= Pattern.compile(regex);
@@ -48,7 +48,7 @@ public class UserRegistration {
 	}
 	
 	//Uc4,5,6,7- validate password using regex - minimum 8 characters,at least one capital letter,number,special character
-	public static String HappyPassWord(String passWord) {
+	public static String validPassWord(String passWord) {
 		String regex = ("(?=.*[A-Z]){1,}(?=.*[a-z]){1,}(?=.*[0-9]){1,}(?=.*[@#$%^&-+=()]){1}[a-zA-Z0-9@#$%^&-+=()]{8,}");
 					
 		Pattern pattern= Pattern.compile(regex);
@@ -62,7 +62,7 @@ public class UserRegistration {
 	}
 	
 	//Uc8 - validate mobile number using regex
-	public static String HappyMobileNumber(String mobileNumber) {
+	public static String validMobileNumber(String mobileNumber) {
 		String regex = ("[0-9]{2}[\\s][6789]{1}[0-9]{9}");
 					
 		Pattern pattern= Pattern.compile(regex);

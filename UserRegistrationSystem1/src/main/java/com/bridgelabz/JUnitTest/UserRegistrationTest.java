@@ -12,7 +12,7 @@ public class UserRegistrationTest {
 	public void givenString_ShoudReturnTrue_IfFirstCharatcterIsCaptitalAndHasMinimumThreeCharactersInFirstName() {
 		UserRegistration user = new UserRegistration();
 		
-		String actual = user.HappyFirstName("Rahul");
+		String actual = user.validFirstName("Rahul");
 		String expected = "Happy";
 		Assert.assertEquals(actual, expected);
 	}
@@ -21,7 +21,7 @@ public class UserRegistrationTest {
 	public void givenString_ShouldReturnFalse_IfFirstCharatcterIsNotCapitalInFirstName() {
 		UserRegistration user = new UserRegistration();
 		
-		String actual = user.HappyFirstName("rahul");
+		String actual = user.validFirstName("rahul");
 		String expected = "Sad";
 		Assert.assertEquals(actual, expected);
 	}
@@ -30,7 +30,7 @@ public class UserRegistrationTest {
 	public void givenString_ShouldReturnFalse_IfThereAreLessThamThreeCharactersInFirstName() {
 		UserRegistration user = new UserRegistration();
 		
-		String result = user.HappyFirstName("Rh");
+		String result = user.validFirstName("Rh");
 		String expected = "Sad";
 		Assert.assertEquals(result, expected);
 	}
@@ -42,7 +42,7 @@ public class UserRegistrationTest {
 	public void givenString_ShouldReturnTrue_IfFirstCharatcterIsCapitalHasMinimumThreeCharactersInLastName() {
 		UserRegistration user = new UserRegistration();
 		
-		String actual = user.HappyFirstName("Patil");
+		String actual = user.validFirstName("Patil");
 		String expected = "Happy";
 		Assert.assertEquals(actual, expected);
 	}
@@ -51,7 +51,7 @@ public class UserRegistrationTest {
 	public void givenString_ShouldReturnFalse_IfFirstCharatcterIsNotCapitalInLastName() {
 		UserRegistration user = new UserRegistration();
 		
-		String result = user.HappyLastName("patil");
+		String result = user.validLastName("patil");
 		String expected = "Sad";
 		Assert.assertEquals(result, expected);
 	}
@@ -60,7 +60,7 @@ public class UserRegistrationTest {
 	public void givenString_ShouldReturnFalse_IfFirstCharatcterIsCapitalButHasLessThanThreeCharactersInLastName() {
 		UserRegistration user = new UserRegistration();
 		
-		String result = user.HappyLastName("Pa");
+		String result = user.validLastName("Pa");
 		String expected = "Sad";
 		Assert.assertEquals(result, expected);
 	}
@@ -73,7 +73,7 @@ public class UserRegistrationTest {
 
 		UserRegistration user = new UserRegistration();
 		
-		String result = user.HappyEMail("abc.xyz.co.in");
+		String result = user.validEMail("abc.xyz.co.in");
 		String expected = "Sad";
 		Assert.assertEquals(result, expected);
 	}
@@ -83,7 +83,7 @@ public class UserRegistrationTest {
 
 		UserRegistration user = new UserRegistration();
 		
-		String result = user.HappyEMail("abc.xyz@bl.co.in.co");
+		String result = user.validEMail("abc.xyz@bl.co.in.co");
 		String expected = "Sad";
 		Assert.assertEquals(result, expected);
 	}
@@ -93,7 +93,7 @@ public class UserRegistrationTest {
 
 		UserRegistration user = new UserRegistration();
 		
-		String result = user.HappyEMail("abc.xyz@.co.i");
+		String result = user.validEMail("abc.xyz@.co.i");
 		String expected = "Sad";
 		Assert.assertEquals(result, expected);
 	}
@@ -103,7 +103,7 @@ public class UserRegistrationTest {
 
 		UserRegistration user = new UserRegistration();
 		
-		String result = user.HappyEMail("abc..xyz@co.in");
+		String result = user.validEMail("abc..xyz@co.in");
 		String expected = "Sad";
 		Assert.assertEquals(result, expected);
 	}
@@ -113,7 +113,7 @@ public class UserRegistrationTest {
 
 		UserRegistration user = new UserRegistration();
 		
-		String result = user.HappyEMail("alb.xyz.co@.in");
+		String result = user.validEMail("alb.xyz.co@.in");
 		String expected = "Sad";
 		Assert.assertEquals(result, expected);
 	}
@@ -123,7 +123,7 @@ public class UserRegistrationTest {
 
 		UserRegistration user = new UserRegistration();
 		
-		String result = user.HappyEMail("abc.xyz@c1.in");
+		String result = user.validEMail("abc.xyz@c1.in");
 		String expected = "Sad";
 		Assert.assertEquals(result, expected);
 	}
@@ -133,7 +133,7 @@ public class UserRegistrationTest {
 
 		UserRegistration user = new UserRegistration();
 		
-		String result = user.HappyEMail("abc.xyz@bl.co.in");
+		String result = user.validEMail("abc.xyz@bl.co.in");
 		String expected = "Happy";
 		Assert.assertEquals(result, expected);
 	}
@@ -146,7 +146,7 @@ public class UserRegistrationTest {
 
 		UserRegistration user = new UserRegistration();
 		
-		String result = user.HappyMobileNumber("91 9967116186");
+		String result = user.validMobileNumber("91 9967116186");
 		String expected = "Happy";
 		Assert.assertEquals(result, expected);
 	}
@@ -156,7 +156,7 @@ public class UserRegistrationTest {
 
 		UserRegistration user = new UserRegistration();
 		
-		String result = user.HappyMobileNumber("919967116186");
+		String result = user.validMobileNumber("919967116186");
 		String expected = "Sad";
 		Assert.assertEquals(result, expected);
 	}
@@ -166,7 +166,7 @@ public class UserRegistrationTest {
 
 		UserRegistration user = new UserRegistration();
 		
-		String result = user.HappyMobileNumber("9199671161861");
+		String result = user.validMobileNumber("9199671161861");
 		String expected = "Sad";
 		Assert.assertEquals(result, expected);
 	}
@@ -176,7 +176,7 @@ public class UserRegistrationTest {
 
 		UserRegistration user = new UserRegistration();
 		
-		String result = user.HappyMobileNumber("91996711618");
+		String result = user.validMobileNumber("91996711618");
 		String expected = "Sad";
 		Assert.assertEquals(result, expected);
 	}
@@ -190,7 +190,7 @@ public class UserRegistrationTest {
 
 		UserRegistration user = new UserRegistration();
 		
-		String result = user.HappyMobileNumber("rahul@123");
+		String result = user.validMobileNumber("rahul@123");
 		String expected = "Sad";
 		Assert.assertEquals(result, expected);
 	}
@@ -200,7 +200,7 @@ public class UserRegistrationTest {
 
 		UserRegistration user = new UserRegistration();
 		
-		String result = user.HappyPassWord("rahul123");
+		String result = user.validPassWord("rahul123");
 		String expected = "Sad";
 		Assert.assertEquals(result, expected);
 	}
@@ -210,7 +210,7 @@ public class UserRegistrationTest {
 
 		UserRegistration user = new UserRegistration();
 		
-		String result = user.HappyPassWord("RAHUL@123");
+		String result = user.validPassWord("RAHUL@123");
 		String expected = "Sad";
 		Assert.assertEquals(result, expected);
 	}
@@ -220,7 +220,7 @@ public class UserRegistrationTest {
 
 		UserRegistration user = new UserRegistration();
 		
-		String result = user.HappyPassWord("R@123");
+		String result = user.validPassWord("R@123");
 		String expected = "Sad";
 		Assert.assertEquals(result, expected);
 	}
@@ -230,7 +230,7 @@ public class UserRegistrationTest {
 
 		UserRegistration user = new UserRegistration();
 		
-		String result = user.HappyPassWord("Abccc@123");
+		String result = user.validPassWord("Abccc@123");
 		String expected = "Happy";
 		Assert.assertEquals(result, expected);
 	}
