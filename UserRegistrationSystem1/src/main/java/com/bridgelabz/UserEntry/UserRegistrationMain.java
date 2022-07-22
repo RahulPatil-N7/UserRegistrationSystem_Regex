@@ -6,9 +6,9 @@ package com.bridgelabz.UserEntry;
  */
 public class UserRegistrationMain {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		
-		System.out.println("Welcome to User Registration System.");
+		System.out.println("---------------------------Welcome to User Registration System---------------------------");
 		//creating user object to call USerRegistrationRegex functions
 		UserRegistrationRegex user = new UserRegistrationRegex();
 		

@@ -3,36 +3,47 @@ package com.bridgelabz.JUnitTest;
 import org.junit.Assert;
 import org.junit.Test;
 
+import com.bridgelabz.UserEntry.UserRegistrationExceptions;
+
 public class UserRegistrationTest {
 	
+	UserRegistration user = new UserRegistration();
 	/* Tests whether first name has proper format or not.
 	 * First name should have first letter capital and
 	 * minimum characters */
 	@Test
-	public void givenString_ShoudReturnTrue_IfFirstCharatcterIsCaptitalAndHasMinimumThreeCharactersInFirstName() {
-		UserRegistration user = new UserRegistration();
+	public void givenString_ShoudReturnTrue_IfFirstCharatcterIsCaptitalAndHasMinimumThreeCharactersInFirstName() throws UserRegistrationExceptions {
 		
-		String actual = user.validFirstName("Rahul");
-		String expected = "Happy";
-		Assert.assertEquals(actual, expected);
+		try {	
+			user.validFirstName("Rahul");
+		}
+		catch(UserRegistrationExceptions exception) { 
+			String expected = "Name is valid";
+			Assert.assertEquals("Name is valid",expected);
+		}
 	}
 
 	@Test
 	public void givenString_ShouldReturnFalse_IfFirstCharatcterIsNotCapitalInFirstName() {
-		UserRegistration user = new UserRegistration();
-		
-		String actual = user.validFirstName("rahul");
-		String expected = "Sad";
-		Assert.assertEquals(actual, expected);
+		try {	
+			user.validFirstName("rahul");
+		}
+		catch(UserRegistrationExceptions exception) { 
+			String expected = "Name is invalid";
+			Assert.assertEquals("Name is invalid",expected);
+		}
 	}
-
+	
 	@Test
-	public void givenString_ShouldReturnFalse_IfThereAreLessThamThreeCharactersInFirstName() {
-		UserRegistration user = new UserRegistration();
+	public void givenString_ShouldReturnFalse_IfThereAreLessThamThreeCharactersInFirstName() throws UserRegistrationExceptions {
 		
-		String result = user.validFirstName("Rh");
-		String expected = "Sad";
-		Assert.assertEquals(result, expected);
+		try {	
+			user.validFirstName("ra");
+		}
+		catch(UserRegistrationExceptions exception) { 
+			String expected = "Name is invalid";
+			Assert.assertEquals("Name is invalid",expected);
+		}
 	}
 	
 	/* Tests whether last name has proper format or not.
@@ -40,102 +51,115 @@ public class UserRegistrationTest {
 	 * minimum characters */
 	@Test
 	public void givenString_ShouldReturnTrue_IfFirstCharatcterIsCapitalHasMinimumThreeCharactersInLastName() {
-		UserRegistration user = new UserRegistration();
-		
-		String actual = user.validFirstName("Patil");
-		String expected = "Happy";
-		Assert.assertEquals(actual, expected);
+		try {	
+			user.validLastName("Patil");
+		}
+		catch(UserRegistrationExceptions exception) { 
+			String expected = "Name is valid";
+			Assert.assertEquals("Name is valid",expected);
+		}
 	}
 	
 	@Test
 	public void givenString_ShouldReturnFalse_IfFirstCharatcterIsNotCapitalInLastName() {
-		UserRegistration user = new UserRegistration();
-		
-		String result = user.validLastName("patil");
-		String expected = "Sad";
-		Assert.assertEquals(result, expected);
+		try {	
+			user.validLastName("patil");
+		}
+		catch(UserRegistrationExceptions exception) { 
+			String expected = "Name is invalid";
+			Assert.assertEquals("Name is invalid",expected);
+		}
 	}
 
 	@Test
 	public void givenString_ShouldReturnFalse_IfFirstCharatcterIsCapitalButHasLessThanThreeCharactersInLastName() {
-		UserRegistration user = new UserRegistration();
-		
-		String result = user.validLastName("Pa");
-		String expected = "Sad";
-		Assert.assertEquals(result, expected);
+		try {	
+			user.validLastName("pa");
+		}
+		catch(UserRegistrationExceptions exception) { 
+			String expected = "Name is invalid";
+			Assert.assertEquals("Name is invalid",expected);
+		}
 	}
 
 	/* Tests whether email has proper format or not
 	 * EMail format-abc.xyz@bl.co.in where 
 	 * abc@bl.co is mandatory part and .xyz, .in are optional */
 	@Test
-	public void givenString_ShouldReturnFalse_IfEmailDoesNotHaveAtSymbol() {
-
-		UserRegistration user = new UserRegistration();
-		
-		String result = user.validEMail("abc.xyz.co.in");
-		String expected = "Sad";
-		Assert.assertEquals(result, expected);
+	public void givenString_ShouldReturnFalse_IfEmailDoesNotHaveAtSymbol() throws UserRegistrationExceptions {
+		try {
+			user.validEMail("abc.xyz.co.in");
+		}
+		catch(UserRegistrationExceptions exception) {
+			String expected = "E-mail is invalid";
+			Assert.assertEquals("E-mail is invalid", expected);
+		}
 	}
-
+	
 	@Test
 	public void givenString_ShouldReturnFalse_IfEmailHasMoreThanThreeTLD() {
-
-		UserRegistration user = new UserRegistration();
-		
-		String result = user.validEMail("abc.xyz@bl.co.in.co");
-		String expected = "Sad";
-		Assert.assertEquals(result, expected);
+		try {
+			user.validEMail("abc.xyz@bl.co.in.co");
+		}
+		catch(UserRegistrationExceptions exception) {
+			String expected = "E-mail is invalid";
+			Assert.assertEquals("E-mail is invalid", expected);
+		}
 	}
 
 	@Test
 	public void givenString_ShouldReturnFalse_IfEmailHasOneCharacterTLD() {
-
-		UserRegistration user = new UserRegistration();
-		
-		String result = user.validEMail("abc.xyz@.co.i");
-		String expected = "Sad";
-		Assert.assertEquals(result, expected);
+		try {
+			user.validEMail("abc.xyz@.co.i");
+		}
+		catch(UserRegistrationExceptions exception) {
+			String expected = "E-mail is invalid";
+			Assert.assertEquals("E-mail is invalid", expected);
+		}
 	}
 
 	@Test
 	public void givenString_ShouldReturnFalse_IfEmailHasTwoContinuousDots() {
-
-		UserRegistration user = new UserRegistration();
-		
-		String result = user.validEMail("abc..xyz@co.in");
-		String expected = "Sad";
-		Assert.assertEquals(result, expected);
+		try {
+			user.validEMail("abc..xyz@co.in");
+		}
+		catch(UserRegistrationExceptions exception) {
+			String expected = "E-mail is invalid";
+			Assert.assertEquals("E-mail is invalid", expected);
+		}
 	}
 
 	@Test
 	public void givenString_ShouldReturnFalse_IfEmailHasThreeDotsBeforeAtSymbol() {
-
-		UserRegistration user = new UserRegistration();
-		
-		String result = user.validEMail("alb.xyz.co@.in");
-		String expected = "Sad";
-		Assert.assertEquals(result, expected);
+		try {
+			user.validEMail("abc.xyz.co@.in");
+		}
+		catch(UserRegistrationExceptions exception) {
+			String expected = "E-mail is invalid";
+			Assert.assertEquals("E-mail is invalid", expected);
+		}
 	}
 
 	@Test
 	public void givenString_ShouldReturnFalse_IfEmailHasDigitsInTLD() {
-
-		UserRegistration user = new UserRegistration();
-		
-		String result = user.validEMail("abc.xyz@c1.in");
-		String expected = "Sad";
-		Assert.assertEquals(result, expected);
+		try {
+			user.validEMail("abc.xyz@c1.in");
+		}
+		catch(UserRegistrationExceptions exception) {
+			String expected = "E-mail is invalid";
+			Assert.assertEquals("E-mail is invalid", expected);
+		}
 	}
 
 	@Test
 	public void givenString_ShouldReturnTrue_IfEmailHasProperFormatAsRequired() {
-
-		UserRegistration user = new UserRegistration();
-		
-		String result = user.validEMail("abc.xyz@bl.co.in");
-		String expected = "Happy";
-		Assert.assertEquals(result, expected);
+		try {
+			user.validEMail("abc.xyz@bl.co.in");
+		}
+		catch(UserRegistrationExceptions exception) {
+			String expected = "E-mail is valid";
+			Assert.assertEquals("E-mail is valid", expected);
+		}
 	}
 
 	/* Tests whether mobile number has proper format or not.
@@ -143,42 +167,46 @@ public class UserRegistrationTest {
 	 * while country code is also mandatory */
 	@Test
 	public void givenString_ShouldReturnTrue_IfMobileNumberHasSpaceAfterCountryCodeAndTenDigitsNumber() {
-
-		UserRegistration user = new UserRegistration();
-		
-		String result = user.validMobileNumber("91 9967116186");
-		String expected = "Happy";
-		Assert.assertEquals(result, expected);
+		try {
+			user.validMobileNumber("91 9967116186");
+		}
+		catch(UserRegistrationExceptions exception) {
+			String expected = "Number is valid";
+			Assert.assertEquals("Number is valid", expected);
+		}
 	}
 
 	@Test
 	public void givenString_ShouldReturnFalse_IfMobileNumberDoesNotHaveSpaceAfterCountryCode() {
-
-		UserRegistration user = new UserRegistration();
-		
-		String result = user.validMobileNumber("919967116186");
-		String expected = "Sad";
-		Assert.assertEquals(result, expected);
+		try {
+			user.validMobileNumber("919967116186");
+		}
+		catch(UserRegistrationExceptions exception) {
+			String expected = "Number is invalid";
+			Assert.assertEquals("Number is invalid", expected);
+		}
 	}
 	
 	@Test
 	public void givenString_ShouldReturnFalse_IfMobileNumberHasMoreThanTenDigits() {
-
-		UserRegistration user = new UserRegistration();
-		
-		String result = user.validMobileNumber("9199671161861");
-		String expected = "Sad";
-		Assert.assertEquals(result, expected);
+		try {
+			user.validMobileNumber("9199671161861");
+		}
+		catch(UserRegistrationExceptions exception) {
+			String expected = "Number is invalid";
+			Assert.assertEquals("Number is invalid", expected);
+		}
 	}
 	
 	@Test
 	public void givenString_ShouldReturnFalse_IfMobileNumberHasLessThanTenDigits() {
-
-		UserRegistration user = new UserRegistration();
-		
-		String result = user.validMobileNumber("91996711618");
-		String expected = "Sad";
-		Assert.assertEquals(result, expected);
+		try {
+			user.validMobileNumber("91 996711618");
+		}
+		catch(UserRegistrationExceptions exception) {
+			String expected = "Number is invalid";
+			Assert.assertEquals("Number is invalid", expected);
+		}
 	}
 
 	/* Tests whether password has proper format or not.
@@ -187,52 +215,57 @@ public class UserRegistrationTest {
 	 * should be eight */
 	@Test
 	public void givenString_ShouldReturnFalse_IfPassWordDoesNotHaveAtLeastOneUpperCaseLetter() {
-
-		UserRegistration user = new UserRegistration();
-		
-		String result = user.validMobileNumber("rahul@123");
-		String expected = "Sad";
-		Assert.assertEquals(result, expected);
+		try {
+			user.validPassWord("rahul@123");
+		}
+		catch(UserRegistrationExceptions exception) {
+			String expected = "Password is invalid";
+			Assert.assertEquals("Password is invalid", expected);
+		}
 	}
 
 	@Test
 	public void givenString_ShouldReturnFalse_IfPassWordDoesNotHaveAtLeastOneSpecialCharacter() {
-
-		UserRegistration user = new UserRegistration();
-		
-		String result = user.validPassWord("rahul123");
-		String expected = "Sad";
-		Assert.assertEquals(result, expected);
+		try {
+			user.validPassWord("rahul123");
+		}
+		catch(UserRegistrationExceptions exception) {
+			String expected = "Password is invalid";
+			Assert.assertEquals("Password is invalid", expected);
+		}
 	}
 
 	@Test
 	public void givenString_ShouldReturnFalse_IfPassWordDoesNotHaveAtLeastOneLowerCaseLetter() {
-
-		UserRegistration user = new UserRegistration();
-		
-		String result = user.validPassWord("RAHUL@123");
-		String expected = "Sad";
-		Assert.assertEquals(result, expected);
+		try {
+			user.validPassWord("RAHUL@123");
+		}
+		catch(UserRegistrationExceptions exception) {
+			String expected = "Password is invalid";
+			Assert.assertEquals("Password is invalid", expected);
+		}
 	}
 
 	@Test
 	public void givenString_ShouldReturnFalse_IfPassWordDoesNotHaveMinimumEightCharacters() {
-
-		UserRegistration user = new UserRegistration();
-		
-		String result = user.validPassWord("R@123");
-		String expected = "Sad";
-		Assert.assertEquals(result, expected);
+		try {
+			user.validPassWord("R@123");
+		}
+		catch(UserRegistrationExceptions exception) {
+			String expected = "Password is invalid";
+			Assert.assertEquals("Password is invalid", expected);
+		}
 	}
 
 	@Test
 	public void givenString_ShouldReturnTrue_IfPassWordIsAcceptedAsPerRequiredFormat() {
-
-		UserRegistration user = new UserRegistration();
-		
-		String result = user.validPassWord("Abccc@123");
-		String expected = "Happy";
-		Assert.assertEquals(result, expected);
+		try {
+			user.validPassWord("Rahul@123");
+		}
+		catch(UserRegistrationExceptions exception) {
+			String expected = "Password is invalid";
+			Assert.assertEquals("Password is invalid", expected);
+		}
 	}
 	
 }
