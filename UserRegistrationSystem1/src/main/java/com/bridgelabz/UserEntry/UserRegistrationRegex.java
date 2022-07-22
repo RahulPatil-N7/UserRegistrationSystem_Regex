@@ -4,96 +4,138 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import com.bridgelabz.UserEntry.UserRegistrationExceptions.ExceptionType;
 
 public class UserRegistrationRegex {
+	
 	
 	Scanner scanner = new Scanner(System.in); 
 	
 	//Uc1 - Validate first name using regex
-	public void validFirstName() {
-		System.out.println("\nEnter first name : ");
+	public void validFirstName() throws UserRegistrationExceptions {
+		System.out.println("\n1)Enter First Name :");
 		String firstName = scanner.nextLine();
 		String regex = ("[A-Z]{1}[a-zA-Z]{2,}$");
-		
 		Pattern pattern= Pattern.compile(regex);
 		Matcher matcher = pattern.matcher(firstName);
-		if (matcher.matches()) {
-			System.out.println(firstName+" is valid.");
+		try {
+			if (firstName.length() == 0) {
+				throw new UserRegistrationExceptions(ExceptionType.EMPTY, "First Name is mandatory.");
+			}
+			if (matcher.matches()) {
+				System.out.println(firstName+" is valid.");
+			}
+			else {
+				throw new UserRegistrationExceptions(ExceptionType.INVALID, "Name should start with capital letter & have minimum 3 characters");
+			}
 		}
-		else {
-			System.out.println(firstName+" is invalid! Name should start with capital letter & have minimum 3 characters.");
+		catch (UserRegistrationExceptions e) {
+			System.out.println(e.toString());
 			validFirstName();
 		}
 	}
 	
 	//Uc2 - Validate last name using regex
 	public void validLastName() {
-		System.out.println("\nEnter last name : ");
+		System.out.println("\n2)Enter Last Name :");
 		String lastName = scanner.nextLine();
 		String regex = ("[A-Z]{1}[a-zA-Z]{2,}$");
 			
 		Pattern pattern= Pattern.compile(regex);
 		Matcher matcher = pattern.matcher(lastName);
-		if (matcher.matches()) {
-			System.out.println(lastName+" is valid.");
+		try {
+			if (lastName.length() == 0) {
+				throw new UserRegistrationExceptions(ExceptionType.EMPTY, "Last Name is mandatory.");
+			}
+			if (matcher.matches()) {
+				System.out.println(lastName+" is valid.");
+			}
+			else {
+				throw new UserRegistrationExceptions(ExceptionType.INVALID, "Name should start with capital letter & have minimum 3 characters");
+				//System.out.println(firstName+" is invalid! Name should start with capital letter & have minimum 3 characters.");
+			}
 		}
-		else {
-			System.out.println(lastName+" is invalid! Name should start with capital letter & have minimum 3 characters.");
+		catch (UserRegistrationExceptions e) {
+			System.out.println(e.toString());
 			validLastName();
 		}
 	}
 
 	//Uc3 - Validate email using regex
 	public void validEMail() {
-		System.out.println("\nEnter Email Id : ");
+		System.out.println("\n3)Enter Email Id :");
 		String eMail = scanner.nextLine();
 		
 		String regex = ("^[a-zA-Z0-9]{2,20}([.][a-z0-9]+)?@[a-z0-9]+.[a-z]{2,3}(.[a-z]{2})?$");		
 		Pattern pattern= Pattern.compile(regex);
 		Matcher matcher = pattern.matcher(eMail);
-		if (matcher.matches()) {
-			System.out.println(eMail+" is valid.");
+		try {
+			if (eMail.length() == 0) {
+				throw new UserRegistrationExceptions(ExceptionType.EMPTY, "E-mail is mandatory.");
+			}
+			if (matcher.matches()) {
+				System.out.println(eMail+" is valid.");
+			}
+			else {
+				throw new UserRegistrationExceptions(ExceptionType.INVALID, "Email should have valid format");
+			}
 		}
-		else {
-			System.out.println(eMail+" is invalid!");
+		catch (UserRegistrationExceptions e) {
+			System.out.println(e.toString());
 			validEMail();
 		}
 	}
 	
-	//Uc4,5,6,7- Validate password using regex - minimum 8 characters,at least one capital letter,number,special character
+	//UC4,5,6,7- Validate password using regex - minimum 8 characters,at least one capital letter,number,special character
 	public void validPassWord() {
-		System.out.println("\nEnter password : ");
+		System.out.println("\n4)Enter Password : ");
 		String passWord = scanner.nextLine();
-		String regex = ("(?=.*[A-Z]){1,}(?=.*[0-9]){1,}(?=.*[@#$%^&-+=()]){1}[a-zA-Z0-9@#$%^&-+=()]{8,}");
-					
+		String regex = ("(?=.*[A-Z]){1,}(?=.*[a-z]){1,}(?=.*[0-9]){1,}(?=.*[@#$%^&-+=()]){1}[a-zA-Z0-9@#$%^&-+=()]{8,}");
 		Pattern pattern= Pattern.compile(regex);
 		Matcher matcher = pattern.matcher(passWord);
-		if (matcher.matches()) {
-			System.out.println(passWord+" is valid.");
+		try {
+			if (passWord.length() == 0) {
+				throw new UserRegistrationExceptions(ExceptionType.EMPTY, "Password is mandatory.");
+			}
+			if (matcher.matches()) {
+				System.out.println(passWord+" is valid.");
+			}
+			else {
+				throw new UserRegistrationExceptions(ExceptionType.INVALID, "Password should have valid format");
+				//System.out.println(firstName+" is invalid! Name should start with capital letter & have minimum 3 characters.");
+			}
 		}
-		else {
-			System.out.println(passWord+" is invalid!");
+		catch (UserRegistrationExceptions e) {
+			System.out.println(e.toString());
 			validPassWord();
 		}
 	}
 	
 	//Uc8 - Validate mobile number using regex
 	public void validMobileNumber() {
-		System.out.println("\nEnter mobile number :");
+		System.out.println("\n5)Enter Mobile Number :");
 		String mobileNumber = scanner.nextLine();
 		String regex = ("[0-9]{2}[\\s][6789]{1}[0-9]{9}");
-					
 		Pattern pattern= Pattern.compile(regex);
 		Matcher matcher = pattern.matcher(mobileNumber);
-		if (matcher.matches()) {
-			System.out.println(mobileNumber+" is valid.");
+		try {
+			if (mobileNumber.length() == 0) {
+				throw new UserRegistrationExceptions(ExceptionType.EMPTY, "Mobile Number is mandatory.");
+			}
+			if (matcher.matches()) {
+				System.out.println(mobileNumber+" is valid.");
+			}
+			else {
+				throw new UserRegistrationExceptions(ExceptionType.INVALID, "Number should have space after country code.");
+				//System.out.println(firstName+" is invalid! Name should start with capital letter & have minimum 3 characters.");
+			}
 		}
-		else {
-			System.out.println(mobileNumber+" is invalid!");
+		catch (UserRegistrationExceptions e) {
+			System.out.println(e.toString());
 			validMobileNumber();
 		}
 	}
-	
+
 	//Uc9 - Validate email sets using regex
 	public void validEMailSet() {
 		System.out.println("\nChecking validity of e-mail lists :\n ");
