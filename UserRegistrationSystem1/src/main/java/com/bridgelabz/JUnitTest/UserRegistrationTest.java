@@ -19,7 +19,7 @@ public class UserRegistrationTest {
 		}
 		catch(UserRegistrationExceptions exception) { 
 			String expected = "Name is valid";
-			Assert.assertEquals("Name is valid",expected);
+			Assert.assertEquals(exception.toString(), expected);
 		}
 	}
 
@@ -30,7 +30,7 @@ public class UserRegistrationTest {
 		}
 		catch(UserRegistrationExceptions exception) { 
 			String expected = "Name is invalid";
-			Assert.assertEquals("Name is invalid",expected);
+			Assert.assertEquals(exception.toString(), expected);
 		}
 	}
 	
@@ -42,7 +42,7 @@ public class UserRegistrationTest {
 		}
 		catch(UserRegistrationExceptions exception) { 
 			String expected = "Name is invalid";
-			Assert.assertEquals("Name is invalid",expected);
+			Assert.assertEquals(exception.toString(), expected);
 		}
 	}
 	
@@ -56,7 +56,7 @@ public class UserRegistrationTest {
 		}
 		catch(UserRegistrationExceptions exception) { 
 			String expected = "Name is valid";
-			Assert.assertEquals("Name is valid",expected);
+			Assert.assertEquals(exception.toString(), expected);
 		}
 	}
 	
@@ -67,7 +67,7 @@ public class UserRegistrationTest {
 		}
 		catch(UserRegistrationExceptions exception) { 
 			String expected = "Name is invalid";
-			Assert.assertEquals("Name is invalid",expected);
+			Assert.assertEquals(exception.toString(), expected);
 		}
 	}
 
@@ -78,7 +78,7 @@ public class UserRegistrationTest {
 		}
 		catch(UserRegistrationExceptions exception) { 
 			String expected = "Name is invalid";
-			Assert.assertEquals("Name is invalid",expected);
+			Assert.assertEquals(exception.toString(), expected);
 		}
 	}
 
@@ -92,7 +92,7 @@ public class UserRegistrationTest {
 		}
 		catch(UserRegistrationExceptions exception) {
 			String expected = "E-mail is invalid";
-			Assert.assertEquals("E-mail is invalid", expected);
+			Assert.assertEquals(exception.toString(), expected);
 		}
 	}
 	
@@ -103,7 +103,7 @@ public class UserRegistrationTest {
 		}
 		catch(UserRegistrationExceptions exception) {
 			String expected = "E-mail is invalid";
-			Assert.assertEquals("E-mail is invalid", expected);
+			Assert.assertEquals(exception.toString(), expected);
 		}
 	}
 
@@ -114,7 +114,7 @@ public class UserRegistrationTest {
 		}
 		catch(UserRegistrationExceptions exception) {
 			String expected = "E-mail is invalid";
-			Assert.assertEquals("E-mail is invalid", expected);
+			Assert.assertEquals(exception.toString(), expected);
 		}
 	}
 
@@ -125,7 +125,7 @@ public class UserRegistrationTest {
 		}
 		catch(UserRegistrationExceptions exception) {
 			String expected = "E-mail is invalid";
-			Assert.assertEquals("E-mail is invalid", expected);
+			Assert.assertEquals(exception.toString(), expected);
 		}
 	}
 
@@ -136,7 +136,7 @@ public class UserRegistrationTest {
 		}
 		catch(UserRegistrationExceptions exception) {
 			String expected = "E-mail is invalid";
-			Assert.assertEquals("E-mail is invalid", expected);
+			Assert.assertEquals(exception.toString(), expected);
 		}
 	}
 
@@ -147,7 +147,7 @@ public class UserRegistrationTest {
 		}
 		catch(UserRegistrationExceptions exception) {
 			String expected = "E-mail is invalid";
-			Assert.assertEquals("E-mail is invalid", expected);
+			Assert.assertEquals(exception.toString(), expected);
 		}
 	}
 
@@ -158,7 +158,7 @@ public class UserRegistrationTest {
 		}
 		catch(UserRegistrationExceptions exception) {
 			String expected = "E-mail is valid";
-			Assert.assertEquals("E-mail is valid", expected);
+			Assert.assertEquals(exception.toString(), expected);
 		}
 	}
 
@@ -172,7 +172,7 @@ public class UserRegistrationTest {
 		}
 		catch(UserRegistrationExceptions exception) {
 			String expected = "Number is valid";
-			Assert.assertEquals("Number is valid", expected);
+			Assert.assertEquals(exception.toString(), expected);
 		}
 	}
 
@@ -183,7 +183,7 @@ public class UserRegistrationTest {
 		}
 		catch(UserRegistrationExceptions exception) {
 			String expected = "Number is invalid";
-			Assert.assertEquals("Number is invalid", expected);
+			Assert.assertEquals(exception.toString(), expected);
 		}
 	}
 	
@@ -194,7 +194,7 @@ public class UserRegistrationTest {
 		}
 		catch(UserRegistrationExceptions exception) {
 			String expected = "Number is invalid";
-			Assert.assertEquals("Number is invalid", expected);
+			Assert.assertEquals(exception.toString(), expected);
 		}
 	}
 	
@@ -205,7 +205,7 @@ public class UserRegistrationTest {
 		}
 		catch(UserRegistrationExceptions exception) {
 			String expected = "Number is invalid";
-			Assert.assertEquals("Number is invalid", expected);
+			Assert.assertEquals(exception.toString(), expected);
 		}
 	}
 
@@ -220,7 +220,7 @@ public class UserRegistrationTest {
 		}
 		catch(UserRegistrationExceptions exception) {
 			String expected = "Password is invalid";
-			Assert.assertEquals("Password is invalid", expected);
+			Assert.assertEquals(exception.toString(), expected);
 		}
 	}
 
@@ -231,7 +231,7 @@ public class UserRegistrationTest {
 		}
 		catch(UserRegistrationExceptions exception) {
 			String expected = "Password is invalid";
-			Assert.assertEquals("Password is invalid", expected);
+			Assert.assertEquals(exception.toString(), expected);
 		}
 	}
 
@@ -242,7 +242,7 @@ public class UserRegistrationTest {
 		}
 		catch(UserRegistrationExceptions exception) {
 			String expected = "Password is invalid";
-			Assert.assertEquals("Password is invalid", expected);
+			Assert.assertEquals(exception.toString(), expected);
 		}
 	}
 
@@ -253,7 +253,7 @@ public class UserRegistrationTest {
 		}
 		catch(UserRegistrationExceptions exception) {
 			String expected = "Password is invalid";
-			Assert.assertEquals("Password is invalid", expected);
+			Assert.assertEquals(exception.toString(), expected);
 		}
 	}
 
@@ -264,7 +264,7 @@ public class UserRegistrationTest {
 		}
 		catch(UserRegistrationExceptions exception) {
 			String expected = "Password is invalid";
-			Assert.assertEquals("Password is invalid", expected);
+			Assert.assertEquals(exception.toString(), expected);
 		}
 	}
 	
