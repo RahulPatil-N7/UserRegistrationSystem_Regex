@@ -15,7 +15,7 @@ public class UserRegistrationTest {
 	public void givenString_ShoudReturnTrue_IfFirstCharatcterIsCaptitalAndHasMinimumThreeCharactersInFirstName() throws UserRegistrationExceptions {
 		
 		try {	
-			user.validFirstName("Rahul");
+			user.validateFirstName("Rahul");
 		}
 		catch(UserRegistrationExceptions exception) { 
 			String expected = "Name is valid";
@@ -26,7 +26,7 @@ public class UserRegistrationTest {
 	@Test
 	public void givenString_ShouldReturnFalse_IfFirstCharatcterIsNotCapitalInFirstName() {
 		try {	
-			user.validFirstName("rahul");
+			user.validateFirstName("rahul");
 		}
 		catch(UserRegistrationExceptions exception) { 
 			String expected = "Name is invalid";
@@ -38,7 +38,7 @@ public class UserRegistrationTest {
 	public void givenString_ShouldReturnFalse_IfThereAreLessThamThreeCharactersInFirstName() throws UserRegistrationExceptions {
 		
 		try {	
-			user.validFirstName("ra");
+			user.validateFirstName("ra");
 		}
 		catch(UserRegistrationExceptions exception) { 
 			String expected = "Name is invalid";
@@ -52,7 +52,7 @@ public class UserRegistrationTest {
 	@Test
 	public void givenString_ShouldReturnTrue_IfFirstCharatcterIsCapitalHasMinimumThreeCharactersInLastName() {
 		try {	
-			user.validLastName("Patil");
+			user.validateLastName("Patil");
 		}
 		catch(UserRegistrationExceptions exception) { 
 			String expected = "Name is valid";
@@ -63,7 +63,7 @@ public class UserRegistrationTest {
 	@Test
 	public void givenString_ShouldReturnFalse_IfFirstCharatcterIsNotCapitalInLastName() {
 		try {	
-			user.validLastName("patil");
+			user.validateLastName("patil");
 		}
 		catch(UserRegistrationExceptions exception) { 
 			String expected = "Name is invalid";
@@ -74,7 +74,7 @@ public class UserRegistrationTest {
 	@Test
 	public void givenString_ShouldReturnFalse_IfFirstCharatcterIsCapitalButHasLessThanThreeCharactersInLastName() {
 		try {	
-			user.validLastName("pa");
+			user.validateLastName("pa");
 		}
 		catch(UserRegistrationExceptions exception) { 
 			String expected = "Name is invalid";
@@ -88,7 +88,7 @@ public class UserRegistrationTest {
 	@Test
 	public void givenString_ShouldReturnFalse_IfEmailDoesNotHaveAtSymbol() throws UserRegistrationExceptions {
 		try {
-			user.validEMail("abc.xyz.co.in");
+			user.validateEMail("abc.xyz.co.in");
 		}
 		catch(UserRegistrationExceptions exception) {
 			String expected = "E-mail is invalid";
@@ -99,7 +99,7 @@ public class UserRegistrationTest {
 	@Test
 	public void givenString_ShouldReturnFalse_IfEmailHasMoreThanThreeTLD() {
 		try {
-			user.validEMail("abc.xyz@bl.co.in.co");
+			user.validateEMail("abc.xyz@bl.co.in.co");
 		}
 		catch(UserRegistrationExceptions exception) {
 			String expected = "E-mail is invalid";
@@ -110,7 +110,7 @@ public class UserRegistrationTest {
 	@Test
 	public void givenString_ShouldReturnFalse_IfEmailHasOneCharacterTLD() {
 		try {
-			user.validEMail("abc.xyz@.co.i");
+			user.validateEMail("abc.xyz@.co.i");
 		}
 		catch(UserRegistrationExceptions exception) {
 			String expected = "E-mail is invalid";
@@ -121,7 +121,7 @@ public class UserRegistrationTest {
 	@Test
 	public void givenString_ShouldReturnFalse_IfEmailHasTwoContinuousDots() {
 		try {
-			user.validEMail("abc..xyz@co.in");
+			user.validateEMail("abc..xyz@co.in");
 		}
 		catch(UserRegistrationExceptions exception) {
 			String expected = "E-mail is invalid";
@@ -132,7 +132,7 @@ public class UserRegistrationTest {
 	@Test
 	public void givenString_ShouldReturnFalse_IfEmailHasThreeDotsBeforeAtSymbol() {
 		try {
-			user.validEMail("abc.xyz.co@.in");
+			user.validateEMail("abc.xyz.co@.in");
 		}
 		catch(UserRegistrationExceptions exception) {
 			String expected = "E-mail is invalid";
@@ -143,7 +143,7 @@ public class UserRegistrationTest {
 	@Test
 	public void givenString_ShouldReturnFalse_IfEmailHasDigitsInTLD() {
 		try {
-			user.validEMail("abc.xyz@c1.in");
+			user.validateEMail("abc.xyz@c1.in");
 		}
 		catch(UserRegistrationExceptions exception) {
 			String expected = "E-mail is invalid";
@@ -154,7 +154,7 @@ public class UserRegistrationTest {
 	@Test
 	public void givenString_ShouldReturnTrue_IfEmailHasProperFormatAsRequired() {
 		try {
-			user.validEMail("abc.xyz@bl.co.in");
+			user.validateEMail("abc.xyz@bl.co.in");
 		}
 		catch(UserRegistrationExceptions exception) {
 			String expected = "E-mail is valid";
@@ -168,7 +168,7 @@ public class UserRegistrationTest {
 	@Test
 	public void givenString_ShouldReturnTrue_IfMobileNumberHasSpaceAfterCountryCodeAndTenDigitsNumber() {
 		try {
-			user.validMobileNumber("91 9967116186");
+			user.validateMobileNumber("91 9967116186");
 		}
 		catch(UserRegistrationExceptions exception) {
 			String expected = "Number is valid";
@@ -179,7 +179,7 @@ public class UserRegistrationTest {
 	@Test
 	public void givenString_ShouldReturnFalse_IfMobileNumberDoesNotHaveSpaceAfterCountryCode() {
 		try {
-			user.validMobileNumber("919967116186");
+			user.validateMobileNumber("919967116186");
 		}
 		catch(UserRegistrationExceptions exception) {
 			String expected = "Number is invalid";
@@ -190,7 +190,7 @@ public class UserRegistrationTest {
 	@Test
 	public void givenString_ShouldReturnFalse_IfMobileNumberHasMoreThanTenDigits() {
 		try {
-			user.validMobileNumber("9199671161861");
+			user.validateMobileNumber("9199671161861");
 		}
 		catch(UserRegistrationExceptions exception) {
 			String expected = "Number is invalid";
@@ -201,7 +201,7 @@ public class UserRegistrationTest {
 	@Test
 	public void givenString_ShouldReturnFalse_IfMobileNumberHasLessThanTenDigits() {
 		try {
-			user.validMobileNumber("91 996711618");
+			user.validateMobileNumber("91 996711618");
 		}
 		catch(UserRegistrationExceptions exception) {
 			String expected = "Number is invalid";
@@ -216,7 +216,7 @@ public class UserRegistrationTest {
 	@Test
 	public void givenString_ShouldReturnFalse_IfPassWordDoesNotHaveAtLeastOneUpperCaseLetter() {
 		try {
-			user.validPassWord("rahul@123");
+			user.validatePassword("rahul@123");
 		}
 		catch(UserRegistrationExceptions exception) {
 			String expected = "Password is invalid";
@@ -227,7 +227,7 @@ public class UserRegistrationTest {
 	@Test
 	public void givenString_ShouldReturnFalse_IfPassWordDoesNotHaveAtLeastOneSpecialCharacter() {
 		try {
-			user.validPassWord("rahul123");
+			user.validatePassword("rahul123");
 		}
 		catch(UserRegistrationExceptions exception) {
 			String expected = "Password is invalid";
@@ -238,7 +238,7 @@ public class UserRegistrationTest {
 	@Test
 	public void givenString_ShouldReturnFalse_IfPassWordDoesNotHaveAtLeastOneLowerCaseLetter() {
 		try {
-			user.validPassWord("RAHUL@123");
+			user.validatePassword("RAHUL@123");
 		}
 		catch(UserRegistrationExceptions exception) {
 			String expected = "Password is invalid";
@@ -249,7 +249,7 @@ public class UserRegistrationTest {
 	@Test
 	public void givenString_ShouldReturnFalse_IfPassWordDoesNotHaveMinimumEightCharacters() {
 		try {
-			user.validPassWord("R@123");
+			user.validatePassword("R@123");
 		}
 		catch(UserRegistrationExceptions exception) {
 			String expected = "Password is invalid";
@@ -260,7 +260,7 @@ public class UserRegistrationTest {
 	@Test
 	public void givenString_ShouldReturnTrue_IfPassWordIsAcceptedAsPerRequiredFormat() {
 		try {
-			user.validPassWord("Rahul@123");
+			user.validatePassword("Rahul@123");
 		}
 		catch(UserRegistrationExceptions exception) {
 			String expected = "Password is invalid";
