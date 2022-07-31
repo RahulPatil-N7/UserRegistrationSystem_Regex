@@ -7,7 +7,7 @@ import com.bridgelabz.UserEntry.UserRegistrationExceptions;
 public class UserRegistration {
 	
 	//Uc1 - validate first name using regex
-	public void validFirstName(String firstName) throws UserRegistrationExceptions {
+	public void validateFirstName(String firstName) throws UserRegistrationExceptions {
 		String regex = ("[A-Z]{1}[a-zA-Z]{2,}$");
 		
 		Pattern pattern= Pattern.compile(regex);
@@ -26,7 +26,7 @@ public class UserRegistration {
 	}
 	
 	//Uc2 - validate last name using regex
-	public void validLastName(String lastName) throws UserRegistrationExceptions {
+	public void validateLastName(String lastName) throws UserRegistrationExceptions {
 		String regex = ("[A-Z]{1}[a-zA-Z]{2,}$");
 			
 		Pattern pattern= Pattern.compile(regex);
@@ -45,7 +45,7 @@ public class UserRegistration {
 	}
 
 	//Uc3 - validate email using regex
-	public void validEMail(String eMail) throws UserRegistrationExceptions {
+	public void validateEMail(String eMail) throws UserRegistrationExceptions {
 		String regex = ("^[a-zA-Z0-9]{2,20}([.][a-z0-9]+)?@[a-z]+.[a-z]{2,3}(.[a-z]{2})?$");		
 		
 		Pattern pattern= Pattern.compile(regex);
@@ -64,7 +64,7 @@ public class UserRegistration {
 	}
 	
 	//Uc4,5,6,7- validate password using regex - minimum 8 characters,at least one capital letter,number,special character
-	public void validPassWord(String passWord) throws UserRegistrationExceptions {
+	public void validatePassword(String passWord) throws UserRegistrationExceptions {
 		String regex = ("(?=.*[A-Z]){1,}(?=.*[a-z]){1,}(?=.*[0-9]){1,}(?=.*[@#$%^&-+=()]){1}[a-zA-Z0-9@#$%^&-+=()]{8,}");
 					
 		Pattern pattern= Pattern.compile(regex);
@@ -83,7 +83,7 @@ public class UserRegistration {
 	}
 	
 	//Uc8 - validate mobile number using regex
-	public void validMobileNumber(String mobileNumber) throws UserRegistrationExceptions {
+	public void validateMobileNumber(String mobileNumber) throws UserRegistrationExceptions {
 		String regex = ("[0-9]{2}[\\s][6789]{1}[0-9]{9}");
 					
 		Pattern pattern= Pattern.compile(regex);

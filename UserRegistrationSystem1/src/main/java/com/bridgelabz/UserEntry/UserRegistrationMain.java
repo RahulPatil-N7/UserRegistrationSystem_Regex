@@ -12,14 +12,13 @@ public class UserRegistrationMain {
 		//creating user object to call USerRegistrationRegex functions
 		UserRegistrationRegex user = new UserRegistrationRegex();
 		
-		user.validFirstName();
-		user.validLastName();
-		user.validEMail();
-		user.validMobileNumber();
-		user.validPassWord(); 
-		user.validEMailSet();
+		user.validateFirstName();
+		user.validateLastName();
+		user.validateEMail();
+		user.validateMobileNumber();
+		user.validatePassword(); 
+		user.validateEMailSet();
 		
-
 	}
 
 }

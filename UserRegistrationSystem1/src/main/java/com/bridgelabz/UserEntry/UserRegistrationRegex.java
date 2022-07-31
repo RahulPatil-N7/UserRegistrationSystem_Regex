@@ -8,11 +8,10 @@ import com.bridgelabz.UserEntry.UserRegistrationExceptions.ExceptionType;
 
 public class UserRegistrationRegex {
 	
-	
 	Scanner scanner = new Scanner(System.in); 
 	
 	//Uc1 - Validate first name using regex
-	public void validFirstName() throws UserRegistrationExceptions {
+	public void validateFirstName() throws UserRegistrationExceptions {
 		System.out.println("\n1)Enter First Name :");
 		String firstName = scanner.nextLine();
 		String regex = ("[A-Z]{1}[a-zA-Z]{2,}$");
@@ -31,12 +30,12 @@ public class UserRegistrationRegex {
 		}
 		catch (UserRegistrationExceptions e) {
 			System.out.println(e.toString());
-			validFirstName();
+			validateFirstName();
 		}
 	}
 	
 	//Uc2 - Validate last name using regex
-	public void validLastName() {
+	public void validateLastName() {
 		System.out.println("\n2)Enter Last Name :");
 		String lastName = scanner.nextLine();
 		String regex = ("[A-Z]{1}[a-zA-Z]{2,}$");
@@ -57,12 +56,12 @@ public class UserRegistrationRegex {
 		}
 		catch (UserRegistrationExceptions e) {
 			System.out.println(e.toString());
-			validLastName();
+			validateLastName();
 		}
 	}
 
 	//Uc3 - Validate email using regex
-	public void validEMail() {
+	public void validateEMail() {
 		System.out.println("\n3)Enter Email Id :");
 		String eMail = scanner.nextLine();
 		
@@ -82,12 +81,12 @@ public class UserRegistrationRegex {
 		}
 		catch (UserRegistrationExceptions e) {
 			System.out.println(e.toString());
-			validEMail();
+			validateEMail();
 		}
 	}
 	
 	//UC4,5,6,7- Validate password using regex - minimum 8 characters,at least one capital letter,number,special character
-	public void validPassWord() {
+	public void validatePassword() {
 		System.out.println("\n4)Enter Password : ");
 		String passWord = scanner.nextLine();
 		String regex = ("(?=.*[A-Z]){1,}(?=.*[a-z]){1,}(?=.*[0-9]){1,}(?=.*[@#$%^&-+=()]){1}[a-zA-Z0-9@#$%^&-+=()]{8,}");
@@ -107,12 +106,12 @@ public class UserRegistrationRegex {
 		}
 		catch (UserRegistrationExceptions e) {
 			System.out.println(e.toString());
-			validPassWord();
+			validatePassword();
 		}
 	}
 	
 	//Uc8 - Validate mobile number using regex
-	public void validMobileNumber() {
+	public void validateMobileNumber() {
 		System.out.println("\n5)Enter Mobile Number :");
 		String mobileNumber = scanner.nextLine();
 		String regex = ("[0-9]{2}[\\s][6789]{1}[0-9]{9}");
@@ -132,12 +131,12 @@ public class UserRegistrationRegex {
 		}
 		catch (UserRegistrationExceptions e) {
 			System.out.println(e.toString());
-			validMobileNumber();
+			validateMobileNumber();
 		}
 	}
 
 	//Uc9 - Validate email sets using regex
-	public void validEMailSet() {
+	public void validateEMailSet() {
 		System.out.println("\nChecking validity of e-mail lists :\n ");
 		ArrayList <String> arrayList = new ArrayList<String>();
 		String regex = ("^[a-zA-Z0-9]+{2,}[- . + _]?[a-zA-Z0-9]{2,}[@](?:([0-9]{1}|[a-zA-Z]{3,5})\\.)+[a-zA-Z]{2,3}");
